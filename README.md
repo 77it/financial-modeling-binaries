@@ -8,4 +8,4 @@ Copyright (C) 2014-present
 
 Is a Windows command line program with the following capabilities:
 * _**excel-modules-to-jsonl-modules**_, to convert an Excel Workbook formatted as Modules/Tables input to JsonLines (a line of JSON for each module's group of tables)
-* _**excel-sheet-to-json-dump**_, to convert an Excel sheet to Json file
+* _**excel-sheet-to-json-dump**_, to convert an Excel sheet to JSON file (using first row values or column numbers as JSON keys)
