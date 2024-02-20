@@ -7,21 +7,21 @@ $ErrorActionPreference = 'Stop'
 $BinDir = ".\bin"
 
 $ConverterZip = "$BinDir\Converter.exe.gz"
-$ConverterUrl = "https://github.com/77it/financial-modeling-binaries/releases/latest/download/Converter.exe.gz"
+$ConverterUrl = "https://github.com/77it/financial-modeling-binaries/releases/latest/download/Converter.exe.zip"
 
 $Converter2Zip = "$BinDir\Converter2.exe.gz"
-$Converter2Url = "https://github.com/77it/financial-modeling-binaries/releases/latest/download/Converter2.exe.gz"
+$Converter2Url = "https://github.com/77it/financial-modeling-binaries/releases/latest/download/Converter2.exe.zip"
 
 if (!(Test-Path $BinDir)) {
   New-Item $BinDir -ItemType Directory | Out-Null
 }
 
 curl.exe -Lo $ConverterZip $ConverterUrl
-tar.exe xzf $ConverterZip -C $BinDir
+tar.exe xf $ConverterZip -C $BinDir
 Remove-Item $ConverterZip
 
 curl.exe -Lo $Converter2Zip $Converter2Url
-tar.exe xzf $Converter2Zip -C $BinDir
+tar.exe xf $Converter2Zip -C $BinDir
 Remove-Item $Converter2Zip
 
 Write-Output "Programs were installed successfully to ${BinDir}"
