@@ -1,6 +1,6 @@
 #!/usr/bin/env pwsh
 # inspired to https://github.com/denoland/deno_install/blob/v0.1.9/install.ps1
-# run with powershell command     irm ./install.ps1 | iex
+# run with powershell command     irm https://raw.githubusercontent.com/77it/financial-modeling-binaries/main/install.ps1 | iex
 
 $ErrorActionPreference = 'Stop'
 
@@ -17,11 +17,11 @@ if (!(Test-Path $BinDir)) {
 }
 
 curl.exe -Lo $ConverterZip $ConverterUrl
-tar.exe xf $ConverterZip -C $BinDir
+tar.exe xzf $ConverterZip -C $BinDir
 Remove-Item $ConverterZip
 
 curl.exe -Lo $Converter2Zip $Converter2Url
-tar.exe xf $Converter2Zip -C $BinDir
+tar.exe xzf $Converter2Zip -C $BinDir
 Remove-Item $Converter2Zip
 
 Write-Output "Programs were installed successfully to ${BinDir}"
